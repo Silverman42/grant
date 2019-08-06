@@ -27,6 +27,6 @@
 }
 
 .slideInRight{
-    animation: slideInRight 0.8s 1 5s cubic-bezier(0.17, 0.78, 0.82, 0.5);
-     -webkit-animation: slideInRight 0.8s 1 5s cubic-bezier(0.17, 0.78, 0.82, 0.5);
+    animation: slideInRight 0.8s 1 0s cubic-bezier(0.17, 0.78, 0.82, 0.5);
+     -webkit-animation: slideInRight 0.8s 1 0s cubic-bezier(0.17, 0.78, 0.82, 0.5);
 }
