@@ -1,0 +1,68 @@
+@import 'variables.css';
+@import 'base.css';
+@import 'animations.css';
+
+/*
+** COntact Header section
+**/
+.contact-header>div {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+/*
+** Contact Section
+**/
+.contact-section {
+    clip-path: var(--diagonal-clip);
+    -webkit-clip-path: var(--diagonal-clip);
+    background: var(--primary-dark);
+}
+
+.contact-section>div {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.contact-social {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+}
+
+.contact-header-desc {
+    font-size: var(--size-7);
+}
+
+.contact_form-container {
+    background: var(--white);
+    filter: drop-shadow(var(--shadow) var(--primary-darker));
+    padding: var(--spacing-lg-1);
+}
+.contact_form{
+    display: grid;
+    grid-template-columns: 100%
+}
+
+@media(min-width: 760px) {
+    .contact-section>div {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: var(--spacing-9);
+        grid-row-gap: var(--spacing-9);
+    }
+
+    .contact-header>div {
+        grid-template-columns: 50%;
+    }
+
+    .contact_form-container {
+        grid-column: 1/4;
+    }
+
+    .contact_form{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact_form-submit{
+        grid-column: 3/4
+    }
+}

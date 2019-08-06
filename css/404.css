@@ -1,0 +1,13 @@
+@import 'variables.css';
+@import 'base.css';
+
+/*
+** Error Section
+**/
+.error{
+    text-align: center;
+}
+.error-header{
+    color: var(--white);
+    font-size: 100px;
+}

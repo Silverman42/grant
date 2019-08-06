@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro|Open+Sans:400,700&display=swap');
+
+:root{
+    /*
+    --primary: rgb(2, 43, 228);
+    --primary-light:  rgb(93, 116, 218);
+    --primary-lighter:  rgb(203, 209, 240);
+    --primary-dark:  rgb(5, 33, 156);
+    --primary-darker:  rgb(4, 21, 100);
+    */
+    --secondary: rgb(2, 43, 228);
+    --primary: rgb(228, 2, 32);
+    --primary-light:  rgb(226, 66, 87);
+    --primary-lighter:   rgb(236, 211, 214);
+    --primary-dark:  rgb(158, 6, 27);
+    --primary-darker:  rgb(90, 3, 14);
+    --white: white;
+    --black: black;
+    --light-1: rgb(148, 148, 148);
+    --light-2: rgb(199, 199, 199);
+    --light-3: rgb(223, 223, 223);
+    --primary-font: 'Open Sans',Segoe UI,sans-serif;
+    --secondary-font: 'Crimson Pro', Segoe UI ,sans-serif;
+    --spacing-1: 2px;
+    --spacing-2: 4px;
+    --spacing-3: 6px;
+    --spacing-4: 8px;
+    --spacing-5: 10px;
+    --spacing-6: 12px;
+    --spacing-7: 16px;
+    --spacing-8: 18px;
+    --spacing-9: 20px;
+    --spacing-lg-1: 30px;
+    --spacing-lg-2: 40px;
+    --spacing-lg-3: 50px;
+    --spacing-lg-4: 60px;
+    --spacing-lg-5: 70px;
+    --size-1: 12px;
+    --size-2: 14px;
+    --size-3: 16px;
+    --size-4: 20px;
+    --size-5: 24px;
+    --size-6: 28px;
+    --size-7: 38px;
+    --shadow: 10px 10px 20px;
+    --diagonal-clip: polygon(0 0, 100% 6%, 100% 100%, 0 94%);
+}
+
