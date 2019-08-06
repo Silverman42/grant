@@ -105,7 +105,10 @@ Beneft Section
 .service-section .service-header {
     font-size: var(--size-5)
 }
-
+.service>i{
+    color: var(--white);
+    font-size: var(--size-5);
+}
 
 
 @media(min-width: 760px) {

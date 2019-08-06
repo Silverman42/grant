@@ -404,7 +404,8 @@ textarea:hover {
         width: 100%;
         color: var(--white);
         text-decoration: none;
-        padding: var(--spacing-7)
+        padding: var(--spacing-7);
+        font-size: var(--size-7)
     }
 }
 /*

@@ -18,8 +18,8 @@
 **/
 .mission-section>div{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    grid-template-columns: 100%;
+   
 
 }
 .mission-image>img{
