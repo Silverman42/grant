@@ -1,0 +1,73 @@
+/*
+** Inventory Header
+**/
+.inventory_hero  .inventory_hero-header{
+    font-size: var(--size-7)
+}
+
+
+.cap_list>div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--spacing-7);
+    grid-row-gap: var(--spacing-7);
+}
+.cap_item{
+    display: inline-flex;
+    flex-wrap: wrap;
+    background: var(--primary-dark);
+    min-height: var(--spacing-xl-2);
+    padding: var(--spacing-7);
+    text-decoration: none;
+    transition: all 0.3s ease-out ;
+    -webkit-transition: all 0.3s ease-out ;
+    margin-bottom: var(--spacing-9)
+}
+.cap_name, .cap_detail{
+    width: 100%;
+}
+.cap_name{
+    align-self: center;
+}
+.cap_image{
+    align-self: flex-start;
+}
+.cap_detail{
+    align-self: flex-end;
+    text-align: right;
+    font-size: var(--size-1);
+    text-transform: capitalize;
+}
+.cap_image{
+    width: 80%;
+    margin: 0px auto;
+    margin-top: -40px;
+    margin-bottom: var(--spacing-2);
+    transition: all 0.3s ease-out ;
+    -webkit-transition: all 0.3s ease-out ;
+}
+.cap_image>img{
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(var(--shadow) var(--primary-darker));
+    -webkit-filter: drop-shadow(var(--shadow) var(--primary-darker))
+}
+
+.cap_item:hover, .cap_item:focus{
+    border: 1px solid var(--primary-darker)
+}
+
+.cap_item:hover>.cap_image, .cap_item:focus>.cap_image{
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+}
+
+@media(min-width: 780px){
+    .cap_list>div{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .cap_image{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

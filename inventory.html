@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/variables.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <link rel="stylesheet" type="text/css" href="css/inventory.css">
+    <script src="https://kit.fontawesome.com/801a91aeab.js"></script>
+    <title>Inventory</title>
+</head>
+
+<body>
+    <div id="app">
+        <!--Begin Navbar-->
+        <header class="navbar">
+            <div>
+                <div class="navbar_logo">
+                    <img src="img/logo.png" alt="ace caps logo">
+                </div>
+                <nav class="navbar_link-container" :class="{'navbar_container-open': navIsOpen}">
+                    <a href="#" class="navbar-cancel" @click.prevent="HideNavLink">
+                        <i class="fas fa-times"></i>
+                    </a>
+                    <ul class="navbar-link">
+                        <li><a class="slideUp" href="index.html">Home</a></li>
+                        <li><a class="slideUp" href="contact.html">Contact Us</a></li>
+                        <li><a class="slideUp" href="about.html">About</a></li>
+                        <li><a class="slideUp" href="inventory.html">Inventory</a></li>
+                    </ul>
+                </nav>
+                <div class="navbar_menu">
+                    <a href="#" class="navbar_menu-btn" @click.prevent="ShowNavLink">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!--End Navbar-->
+        <section class="inventory_hero">
+            <div>
+                <p><b>INVENTORY</b></p>
+                <h1 class="inventory_hero-header secondary-font">Our Shelve of Exotic Caps</h1>
+                <p>Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet, very affordable</p>
+            </div>
+        </section>
+        <!--Start Cap List-->
+        <section class="cap_list">
+            <div>
+                <a v-for="cap in capData" href="#" class="cap_item">
+                    <div class="cap_image">
+                        <img :src="cap.thumbnail" alt="">
+                    </div>
+                    <div class="cap_name">
+                        <h3>{{cap.name}}</h3>
+                    </div>
+                    <div class="cap_detail">view detail</div>
+                </a>
+            </div>
+        </section>
+        <!--End Cap List-->
+        <!--Ecommerce Section-->
+        <section class="ecommerce-section">
+            <div>
+                <div class="ecommerce-detail">
+                    <h2 class="ecommerce-header secondary-font">
+                        We deliver Nationwide and Beyond
+                    </h2>
+                    <p>Make orders for Ace Caps within and outside Nigeria. Visit our stores on any of the E-commerce
+                        outlets below </p>
+                    <div class="ecommerce-outlet">
+                        <a href="#">
+                            <img src="img/ecommerce-outlets/konga.png" alt="konga.com">
+                        </a>
+                    </div>
+                    <p><b>OR</b></p>
+                    <div>
+                        <button class="btn btn-inverse btn-inverse-primary">contact us</button>
+                    </div>
+                </div>
+                <div class="ecommerce-image">
+                    <img src="img/courier-service.png"
+                        style="width:100%; height: auto;position:relative;margin: auto;margin-bottom: -8px;"
+                        alt="delivery man">
+                </div>
+            </div>
+        </section>
+        <!--End Ecommerce Section-->
+        <!--Start Footer-->
+        <footer>
+            <div>
+                <div class="site-identity">
+                    <img src="img/logo.png" alt="ace-cap logo">
+                    <p class="secondary-font">Ace Caps 2019 &copy;</p>
+                </div>
+
+                <div class="site-links">
+                    <h4>LINKS</h4>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                    <p><a href="inventory.html">Inventory</a></p>
+                </div>
+
+                <div class="site-links">
+                    <h4>LEGAL</h4>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Sitemap</a></p>
+                </div>
+
+                <div class="site-links">
+                    <h4>SOCIAL</h4>
+                    <div class="footer-social">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End Footer-->
+    </div>
+    <!--End Footer-->
+    <script src="js/vue.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
