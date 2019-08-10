@@ -33,7 +33,6 @@
     .about_hero>div .about_hero-header{
         grid-column: 1/4;
         grid-row: 2;
-        font-size: var(--size-7)
     }
     .about_hero>div .cite-profile{
         grid-column: 3/4;
