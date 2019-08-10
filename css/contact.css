@@ -59,7 +59,12 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
 
+    .contact_form-desc{
+        grid-column: 1/4;
+    }
+
     .contact_form-submit{
-        grid-column: 3/4
+        grid-column: 1/4;
+        justify-self: end;
     }
 }

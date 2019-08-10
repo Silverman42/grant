@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#e24257">
+    
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#e24257">
+
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
     <link rel="stylesheet" type="text/css" href="css/variables.css">
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/animations.css">
@@ -23,7 +31,8 @@
                     <p>{{ videoInfo.vTitle }}</p>
             </template>
             <template slot="body">
-                    <video class="video-modal" :src="videoInfo.vLink" controls></video>
+                    <iframe width="100%" height="315" :src="videoInfo.vLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   <!--<video class="video-modal" :src="videoInfo.vLink" controls></video>-->
             </template>
         </modal>
 
@@ -64,7 +73,7 @@
                         assured traditional caps. Our products possess unique features and styles to fit all traditional
                         attires and wears. It is a combination of Creativity and Human Ingenuity</p>
                     <button class="btn btn-inverse btn-inverse-primary slideUp">
-                        Get a measurement
+                        Make an order today
                     </button>
                 </div>
                 <div class="hero-image slideInRight">
@@ -104,7 +113,7 @@
                         vero consectetur quae non, cum aliquid quos nulla ut explicabo. Voluptas maxime nemo beatae
                         deserunt
                         totam accusamus soluta?</p>
-                    <a href="#" @click.prevent="ShowVideo('videos/measurement.mp4','How to take measurement of yourself')" class="media-link">
+                    <a href="#" @click.prevent="ShowVideo('https://www.youtube.com/embed/3Cw5kaKUpBw','How to take measurement of yourself')" class="media-link">
                         <div class="media-btn">
                             <button><i class="fas fa-play"></i></button>
                         </div>
@@ -123,7 +132,7 @@
                         quo exercitationem odit fuga, alias quod aut minima repellendus quia earum ad atque possimus
                         vero
                         deserunt magni?</p>
-                    <a href="#" class="media-link" @click.prevent="ShowVideo('happy','How to carefully wash your caps')">
+                    <a href="#" class="media-link" @click.prevent="ShowVideo('https://www.youtube.com/embed/ubmljnY3W7o','How to carefully wash your caps')">
                         <div class="media-btn">
                             <button><i class="fas fa-play"></i></button>
                         </div>
@@ -193,7 +202,7 @@
                     </div>
                     <p><b>OR</b></p>
                     <div>
-                        <button class="btn btn-inverse btn-inverse-primary">contact us</button>
+                        <a href="contact.html" class="btn btn-inverse btn-inverse-primary">contact us</a>
                     </div>
                 </div>
                 <div class="ecommerce-image">

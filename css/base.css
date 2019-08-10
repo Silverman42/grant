@@ -64,7 +64,8 @@ address {
     text-transform: capitalize;
     display: inline-block;
     text-decoration: none;
-    font-size: var(--size-2)
+    font-size: var(--size-2);
+    font-family: var(--primary-font);
 }
 
 .btn:hover,
@@ -118,9 +119,9 @@ address {
 **/
 .media-link {
     display: inline-flex;
-    width: auto;
+    width: 100%;
     padding: var(--spacing-6);
-    background: var(--black);
+    background: var(--primary-darker);
     align-items: center;
     text-decoration: none;
     filter: drop-shadow(var(--shadow) var(--primary-darker));
@@ -178,7 +179,7 @@ footer>div {
 
 .footer-social {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 footer a {
@@ -386,7 +387,7 @@ textarea:hover {
 **/
 .modal-background{
     background: var(--black);
-    opacity: 0.5;
+    opacity: 0.8;
     z-index: 30;
     width: 100vw;
     display: block;

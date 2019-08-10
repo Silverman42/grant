@@ -20,7 +20,7 @@ Hero Section
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: black;
+    background: var(--primary-dark);
     padding: var(--spacing-5);
     width: 50%;
     font-size: var(--size-3);
