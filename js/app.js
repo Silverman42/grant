@@ -14,6 +14,13 @@ var vm = new Vue({
          */
         capData: caps,
 
+        
+        /**
+         * capMeasurement
+         * @description: List of cap Data
+         */
+        capMeasurement: capMeasurement,
+
         /**
          * modalIsOpen
          * @description: Toggled state of the modal
@@ -24,7 +31,13 @@ var vm = new Vue({
          * videoInfo
          * @description: Information about the video to be inserted in the modal
          */
-        videoInfo: {}
+        videoInfo: {},
+
+        /**
+         * selectedCap
+         * @description: Currently selected cap from inventory to be used in inventory modal
+         */
+        selectedCap: {}
     },
     methods:{
         /**
@@ -74,6 +87,16 @@ var vm = new Vue({
             }
             this.videoInfo = videoInfo
             this.OpenModal();
+        },
+
+        /**
+         * ShowCapData
+         * @description: Opens a modal and shows the data for the clicked cap
+         * @param {Object} cap
+         */
+        ShowCapData(cap){
+            this.OpenModal();
+            this.selectedCap = cap
         }
     }
 })

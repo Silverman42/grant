@@ -48,3 +48,18 @@
     animation: revealUp 0.8s 1 0.4s cubic-bezier(0.1, 0.49, 0.2, 0.93) fowards;
      -webkit-animation: revealUp 0.8s 1 0.4s cubic-bezier(0.1, 0.49, 0.2, 0.93) forwards;
 }
+
+.zoom-enter-active,.zoom-leave-active{
+    transition: transform 0.4s cubic-bezier(0.1, 0.49, 0.2, 0.93), opacity 0.4s cubic-bezier(0.1, 0.49, 0.2, 0.93);
+    -webkit-transition: transform 0.4s cubic-bezier(0.1, 0.49, 0.2, 0.93), opacity 0.4s cubic-bezier(0.1, 0.49, 0.2, 0.93);
+}
+.zoom-enter{
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    opacity: 0;
+}
+.zoom-leave-to{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    opacity: 0;
+}

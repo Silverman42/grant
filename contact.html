@@ -67,57 +67,7 @@
                 <div class="contact_form-container">
                     <h3 class="font-black">Send Your Measurements</h3>
                     <p class="font-black">All fields with the asterisk(*) are obligatory</p>
-                    <form class="contact_form" action="" name="measure-form" netlify>
-                        <div class="form-group">
-                            <label for="client_name">Client Name<sup class="form-required">*</sup></label>
-                            <input type="text" id="client_name" placeholder="Full Name" name="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="client_email">Client Email<sup class="form-required">*</sup></label>
-                            <input type="text" id="client_email" placeholder="example@email.com" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="cap_size_type">Cap Size Type<sup class="form-required">*</sup></label>
-                            <select name="cap_size_type" id="cap_size_type">
-                                <option value="custom">Custom</option>
-                                <option value="standard">Standard</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="cap_size">Cap Size<sup class="form-required">*</sup></label>
-                            <select name="cap_size" id="cap_size">
-                                <option value="22.5">22.5</option>
-                                <option value="23">23</option>
-                                <option value="23.5">23.5</option>
-                            </select>
-                        </div>
-                        <div class="form-group" hidden>
-                            <label for="cap_size">Cap Size<sup class="form-required">*</sup></label>
-                            <input type="text" name="cap_size" id="cap_size">
-                        </div>
-                        <div class="form-group">
-                            <label for="cap_measure">Cap Measurement Type<sup class="form-required">*</sup></label>
-                            <select name="cap_measure" id="cap_measure">
-                                <option value="custom">Inches</option>
-                                <option value="standard">Centimeters (cm)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="cap_type">Cap Type<sup class="form-required">*</sup></label>
-                            <select name="cap_type" id="cap_type">
-                                <option value="">Asho Oke</option>
-                                <option value="">Chief Cap</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group contact_form-desc" >
-                            <label for="cap_desc">Cap Description</label>
-                            <textarea name="cap_desc" id="cap_desc" cols="30" rows="4"></textarea>
-                        </div>
-                        <div class="contact_form-submit">
-                            <button class="btn btn-primary contact_form-submit">Send Cap Data</button>
-                        </div>
-                    </form>
+                    <contact-form></contact-form>
                 </div>
                 <div>
                     <h3>E-COMMERCE OUTLET</h3>

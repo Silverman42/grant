@@ -41,7 +41,7 @@ address {
 .highlight {
     display: inline-block;
     position: relative;
-    color: white
+    color: white;
 }
 
 .highlight::after {
@@ -49,11 +49,22 @@ address {
     display: block;
     position: absolute;
     width: 80%;
-    padding: var(--spacing-2);
     opacity: 0.5;
     bottom: 5px;
     left: 0px;
-    background: var(--primary-lighter)
+    background: var(--primary-lighter);
+    padding: var(--spacing-2);
+}
+
+/*
+** Anchor
+**/
+
+.anchor-primary{
+    color: var(--primary);
+}
+.anchor-primary:hover, .anchor-primary:focus{
+    color: var(--primary-light);
 }
 
 .btn {
@@ -305,6 +316,10 @@ textarea {
     font-weight: 600
 }
 
+option{
+    color: var(--black);
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -408,7 +423,7 @@ textarea:hover {
     z-index: 40;
 }
 
-.modal-container p, .modal-container h4{
+.modal-container .modal-content{
     color: var(--black) !important;
 }
 
@@ -417,7 +432,7 @@ textarea:hover {
     position: relative;
     display: grid;
     grid-template-columns: 80% 20%;
-    border-bottom: 0.8px solid var(--light-2);
+    border-bottom: 0.8px solid var(--light-3);
 }  
 .modal-header>.modal-descr, .modal-header>.modal-close{
     padding: var(--spacing-3) var(--spacing-8);

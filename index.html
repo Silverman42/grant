@@ -27,8 +27,8 @@
         
         <modal :is-open="modalIsOpen" @close-modal="CloseModal">
             <template slot="description">
-                    <h4>Video Expose</h4>
-                    <p>{{ videoInfo.vTitle }}</p>
+                    <h4 class="modal-content">Video Expose</h4>
+                    <p class="modal-content">{{ videoInfo.vTitle }}</p>
             </template>
             <template slot="body">
                     <iframe width="100%" height="315" :src="videoInfo.vLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

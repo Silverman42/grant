@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Chrome, Firefox OS and Opera -->
+    <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#e24257">
-    
+
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#e24257">
 
@@ -23,6 +23,48 @@
 
 <body>
     <div id="app">
+        <!--Begin Modal-->
+        <modal :is-open="modalIsOpen" @close-modal="CloseModal">
+            <template slot="description">
+                <h4 class="modal-content">Cap Information</h4>
+                <p class="modal-content">Information about {{selectedCap.name || 'Selected Cap'}}</p>
+            </template>
+            <template slot="body">
+                <aside class="cap_info-modal">
+                    <h5 class="header secondary-font">{{selectedCap.name || 'Selected Cap'}}</h5>
+                    <div class="carousel-container">
+                        <carousel 
+                            transition='zoom' 
+                            :decrease-btn-class="['carousel-btn']"
+                            :increase-btn-class="['carousel-btn']"
+                            :images="selectedCap.images"></carousel>
+                    </div>
+                    <div class="infodata-container">
+                        <article class="infodata">
+                            <h6 class="header">Available Sizes</h6>    
+                            <span v-for="(size,index) in capMeasurement" :keys="index" class="list">
+                                {{size.inch}}"
+                            </span>
+                            <div style="padding: var(--spacing-2); text-align: right">
+                                <a href="#" class="anchor-primary">Switch to Centimeters (cm)</a>
+                            </div>
+                        </article>
+                        <div class='infodata'>
+                            
+                        </div>
+                        <div class='infodata'>
+                            <h6 class="header">Visit to our e-commerce outlet</h6>
+                            <div class="ecommerce">
+                                <a href="contact.html"><img src="img/ecommerce-outlets/konga.png" alt=""></a>
+                            </div> 
+                            <h6 class="header">OR</h6>
+                            <a href="contact.html#contact-form" class="btn btn-primary">Make a custom order</a>
+                        </div>
+                    </div>
+                </aside>
+            </template>
+        </modal>
+        <!--End Modal-->
         <!--Begin Navbar-->
         <header class="navbar">
             <div>
@@ -54,13 +96,14 @@
             <div>
                 <p><b>INVENTORY</b></p>
                 <h1 class="inventory_hero-header secondary-font">Our Shelve of Exotic Caps</h1>
-                <p>Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet, very affordable</p>
+                <p>Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet,
+                    very affordable</p>
             </div>
         </section>
         <!--Start Cap List-->
         <section class="cap_list">
             <div>
-                <a v-for="cap in capData" href="#" class="cap_item">
+                <a v-for="cap in capData" href="#" class="cap_item" @click.prevent="ShowCapData(cap)">
                     <div class="cap_image">
                         <img :src="cap.thumbnail" alt="">
                     </div>
