@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "http://ace-caps.netlify.com/*"
-  to = "http://acecaps.com.ng/:splat"
-  status = 301
