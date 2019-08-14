@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" type = "image/png" href = "img/favicon.png">
+    <!-- For apple devices -->
+    <link rel = "apple-touch-icon" type = "image/png" href = "img/favicon.png"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#e24257">
-
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#e24257">
 
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
@@ -42,11 +40,15 @@
                     <div class="infodata-container">
                         <article class="infodata">
                             <h6 class="header">Available Sizes</h6>    
-                            <span v-for="(size,index) in capMeasurement" :keys="index" class="list">
+                            <span v-if="modalCapMeasurement == 'inch'" v-for="(size,index) in capMeasurement" :keys="index" class="list">
                                 {{size.inch}}"
                             </span>
+                            <span v-if="modalCapMeasurement == 'cm'" v-for="(size,index) in capMeasurement" :keys="index" class="list">
+                                {{size.cm}} cm
+                            </span>
                             <div style="padding: var(--spacing-2); text-align: right">
-                                <a href="#" class="anchor-primary">Switch to Centimeters (cm)</a>
+                                <a href="#" class="anchor-primary" v-if="modalCapMeasurement == 'inch'" @click="SwitchModalMeasurement('cm')">Switch to Centimeters (cm)</a>
+                                <a href="#" class="anchor-primary" v-if="modalCapMeasurement == 'cm'" @click="SwitchModalMeasurement('inch')">Switch to Inches (")</a>
                             </div>
                         </article>
                         <div class='infodata'>
@@ -55,7 +57,7 @@
                         <div class='infodata'>
                             <h6 class="header">Visit to our e-commerce outlet</h6>
                             <div class="ecommerce">
-                                <a href="contact.html"><img src="img/ecommerce-outlets/konga.png" alt=""></a>
+                                <a href="contact.html"><img src="img/ecommerce-outlets/konga_black.png" alt="konga.com"></a>
                             </div> 
                             <h6 class="header">OR</h6>
                             <a href="contact.html#contact-form" class="btn btn-primary">Make a custom order</a>
@@ -68,9 +70,9 @@
         <!--Begin Navbar-->
         <header class="navbar">
             <div>
-                <div class="navbar_logo">
+                <a href="index.html" class="navbar_logo">
                     <img src="img/logo.png" alt="ace caps logo">
-                </div>
+                </a>
                 <nav class="navbar_link-container" :class="{'navbar_container-open': navIsOpen}">
                     <a href="#" class="navbar-cancel" @click.prevent="HideNavLink">
                         <i class="fas fa-times"></i>
@@ -94,16 +96,16 @@
         <!--End Navbar-->
         <section class="inventory_hero">
             <div>
-                <p><b>INVENTORY</b></p>
-                <h1 class="inventory_hero-header secondary-font">Our Shelve of Exotic Caps</h1>
-                <p>Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet,
+                <p class="hide-slideInRight"><b>INVENTORY</b></p>
+                <h1 class="inventory_hero-header secondary-font hide-slideInRight">Our Shelve of Exotic Caps</h1>
+                <p class="hide-slideInRight">Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet,
                     very affordable</p>
             </div>
         </section>
         <!--Start Cap List-->
         <section class="cap_list">
             <div>
-                <a v-for="cap in capData" href="#" class="cap_item" @click.prevent="ShowCapData(cap)">
+                <a v-for="cap in capData" href="#" class="cap_item hide-slideUp" @click.prevent="ShowCapData(cap)">
                     <div class="cap_image">
                         <img :src="cap.thumbnail" alt="">
                     </div>
@@ -116,9 +118,9 @@
         </section>
         <!--End Cap List-->
         <!--Ecommerce Section-->
-        <section class="ecommerce-section">
+                <section class="ecommerce-section">
             <div>
-                <div class="ecommerce-detail">
+                <div class="ecommerce-detail hide-slideInRight">
                     <h2 class="ecommerce-header secondary-font">
                         We deliver Nationwide and Beyond
                     </h2>
@@ -134,7 +136,7 @@
                         <a href="contact.html" class="btn btn-inverse btn-inverse-primary">contact us</a>
                     </div>
                 </div>
-                <div class="ecommerce-image">
+                <div class="ecommerce-image hide-slideInLeft">
                     <img src="img/courier-service.png"
                         style="width:100%; height: auto;position:relative;margin: auto;margin-bottom: -8px;"
                         alt="delivery man">
@@ -166,9 +168,9 @@
                 <div class="site-links">
                     <h4>SOCIAL</h4>
                     <div class="footer-social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>

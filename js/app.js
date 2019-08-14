@@ -37,7 +37,13 @@ var vm = new Vue({
          * selectedCap
          * @description: Currently selected cap from inventory to be used in inventory modal
          */
-        selectedCap: {}
+        selectedCap: {},
+
+        /**
+         * selectedCapMeasurement
+         * @description: Measurement type Currently selected cap from inventory to be used in inventory modal
+         */
+        modalCapMeasurement: 'cm'
     },
     methods:{
         /**
@@ -97,6 +103,59 @@ var vm = new Vue({
         ShowCapData(cap){
             this.OpenModal();
             this.selectedCap = cap
-        }
+        },
+
+        /**
+         * MakeObserver
+         * @description: Uses the class name of the entry element to apply the observer
+         * @param {String} addedClass (New html class to be added to the observed element)
+         */
+        MakeObserver(addedClass){
+            //Check if observer API is available on Browser
+            if("IntersectionObserver" in window){
+                //return new instance of observer API
+                return (new IntersectionObserver((entries,observer) => {
+
+                    entries.forEach(entry =>{
+                        if(entry.isIntersecting){
+                            //Element to be observed
+                            var target = entry.target
+                            target.classList.add(addedClass)
+                            observer.unobserve(target);
+                        }
+                    })
+                })) ;
+            }
+        },
+        /**
+         * ObserveElement
+         * @description: Trigger Observer API to observe the element
+         * @param {String} observedElementClass (Element to be observed)
+         * @param  {String} addedClass (Classes to be added after the element has been observed)
+         */
+        ObserveElement(observedElementClass, addedClass){
+            var elementObserver = this.MakeObserver(addedClass)
+            var elements = Array.from(document.querySelectorAll(observedElementClass))
+            elements.forEach(function (element) {  
+                elementObserver.observe(element)
+            })
+        },
+        /**
+         * SwitchModalMeasurement
+         * @description: Switch the measurement type of the cap in the modal
+         * @param {String} measurementType (measurement of cap in the modal)
+         */
+        SwitchModalMeasurement(measurement){
+            this.modalCapMeasurement = measurement
+        },
+    },
+    mounted(){
+        vm = this; //Vue instance
+        document.addEventListener("DOMContentLoaded",function () {  
+            vm.ObserveElement('.hide-slideUp','slideUp')
+            vm.ObserveElement('.hide-slideInLeft','slideInLeft')
+            vm.ObserveElement('.hide-slideInRight','slideInRight')
+        })
     }
+
 })

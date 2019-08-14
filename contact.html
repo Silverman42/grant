@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- For apple devices -->
+    <link rel="apple-touch-icon" type="image/png" href="img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#e24257">
-    
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#e40220">
+
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#e24257">
+    <meta name="msapplication-navbutton-color" content="#e40220">
 
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
@@ -26,9 +29,9 @@
         <!--Begin Navbar-->
         <header class="navbar">
             <div>
-                <div class="navbar_logo">
+                <a href="index.html" class="navbar_logo">
                     <img src="img/logo.png" alt="ace caps logo">
-                </div>
+                </a>
                 <nav class="navbar_link-container" :class="{'navbar_container-open': navIsOpen}">
                     <a href="#" class="navbar-cancel" @click.prevent="HideNavLink">
                         <i class="fas fa-times"></i>
@@ -52,48 +55,53 @@
         <!--End Navbar-->
         <section class="contact-header">
             <div>
-                <p><b>CONTACT</b></p>
-                <h1 class="contact-header-desc secondary-font">
-                    We are always available to take your orders
-                </h1>
-                <p>Reach us through any of the media below. We deliver within and outside Nigeria. If you wish to
-                    make a special order for a cap with a custom measurement, please fill the form and be rest
-                    assured to
-                    get a swift response from us</p>
+                <div>
+                    <p class="hide-slideInRight"><b>CONTACT</b></p>
+                    <h1 class="contact-header-desc secondary-font hide-slideInRight">
+                        We are always available to take your orders
+                    </h1>
+                    <p class="hide-slideInRight">Reach us through any of the media below. We deliver within and outside Nigeria. If you wish to
+                        make a special order for a cap with a custom measurement, please fill the form and be rest
+                        assured to
+                        get a swift response from us</p>
+                </div>
+                <div class="contact-image">
+                    <img class="hide-slideInLeft" src="img/delivery-box.png" alt="delivery_box">
+                </div>
             </div>
         </section>
         <section class="contact-section">
             <div>
-                <div class="contact_form-container">
+                <div class="contact_form-container hide-slideUp">
                     <h3 class="font-black">Send Your Measurements</h3>
                     <p class="font-black">All fields with the asterisk(*) are obligatory</p>
                     <contact-form></contact-form>
                 </div>
                 <div>
-                    <h3>E-COMMERCE OUTLET</h3>
-                    <div class="ecommerce-outlet">
-                        <a href="#">
+                    <h3 class="hide-slideInRight">E-COMMERCE OUTLET</h3>
+                    <div class="ecommerce-outlet hide-slideInRight">
+                        <a href="#" class="hide-slideInRight">
                             <img src="img/ecommerce-outlets/konga.png" alt="konga.com">
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h3>ADDRESS</h3>
-                    <address>
+                    <h3 class="hide-slideInRight">ADDRESS</h3>
+                    <address class="hide-slideInRight">
                         313, Nnebisi Road, Asaba, Delta State, Nigeria.
                     </address>
                 </div>
                 <div>
-                    <h3>SOCIAL</h3>
-                    <div class="contact-social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <h3 class="hide-slideInRight">SOCIAL</h3>
+                    <div class="contact-social hide-slideInRight">
+                        <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i class="fab fa-facebook-f"></i></a>
                         <a href=""><i class="fab fa-instagram"></i></a>
                         <a href=""><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h3>PHONE</h3>
-                    <p>+234 8023 1815 09</p>
+                    <h3 class="hide-slideInRight">PHONE</h3>
+                    <p class="hide-slideInRight">+234 8023 1815 09</p>
                 </div>
             </div>
         </section>
@@ -121,9 +129,9 @@
                 <div class="site-links">
                     <h4>SOCIAL</h4>
                     <div class="footer-social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>

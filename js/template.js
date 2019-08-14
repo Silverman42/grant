@@ -4,7 +4,7 @@
     <!--Begin Modal-->
     <div @click="CloseModal" class="modal-background">
     </div>
-    <div class="modal-container revealUp">
+    <div class="modal-container slideUp" style="opacity: 0">
         <div class="modal-header">
             <div class="modal-descr">
                 <slot name="description"/>
@@ -40,7 +40,7 @@
  */
 Vue.component('contact-form',{
     template:`
-        <form class="contact_form" action="" name="measure-form" netlify id="contact-form">
+        <form class="contact_form" action="https://formspree.io/snkeze9@gmail.com" method="POST">
         <div class="form-group">
             <label for="client_name">Client Name<sup class="form-required">*</sup></label>
             <input type="text" id="client_name" placeholder="Full Name" name="name" required>
@@ -56,19 +56,19 @@ Vue.component('contact-form',{
                 <option value="standard" selected>Standard</option>
             </select>
         </div>
-        <div class="form-group" :hidden="capSizeIsStandard == false">
+        <div class="form-group" v-if="capSizeIsStandard == true">
             <label for="cap_size">Cap Size<sup class="form-required">*</sup></label>
             <select name="cap_size" id="cap_size" required>
                 <option v-for="(measurement, index) in fetchMeasurements" :keys="index" :value="measurement">{{measurement}}</option>
             </select>
         </div>
-        <div class="form-group" :hidden="capSizeIsStandard == true">
+        <div v-if="capSizeIsStandard == false" class="form-group">
             <label for="cap_size">Cap Size<sup class="form-required">*</sup></label>
             <input type="text" name="cap_size" id="cap_size" placeholder="Custom size" required>
         </div>
         <div class="form-group">
             <label for="cap_measure">Cap Measurement Type<sup class="form-required">*</sup></label>
-            <select name="cap_measure" v-model="measurementType" id="cap_measure" required>
+            <select name="cap_measurement" v-model="measurementType" id="cap_measure" required>
                 <option value="inch" selected>Inches</option>
                 <option value="cm">Centimeters (cm)</option>
             </select>
@@ -85,7 +85,7 @@ Vue.component('contact-form',{
             <textarea name="cap_desc" id="cap_desc" cols="30" rows="4"></textarea>
         </div>
         <div class="contact_form-submit">
-            <button class="btn btn-primary contact_form-submit">Send Cap Data</button>
+            <button type="submit" class="btn btn-primary contact_form-submit">Send Cap Data</button>
         </div>
     </form>
     `,
@@ -126,13 +126,21 @@ Vue.component('carousel',{
         <transition :name="transition" mode="out-in">
             <img v-for="(image,index) in images" :key="index" v-if="currentIndex == index" :class="imageClass" :src="image" style="width:100%; height:auto"/>
         </transition>
-        <div :class="counterContainClass">
+        <div v-if="canAutoplay == false" :class="counterContainClass">
             <button :class="decreaseBtnClass" @click="DecrementImage"><</button>
             <button :class="increaseBtnClass" @click="IncrementImage">></button>
         </div>
     </div>
     `,
     props:{
+        canAutoplay:{
+            type: Boolean,
+            default: false
+        },
+        autoPlayInterval:{
+            type: Number,
+            default: 6000
+        },
         transition:{
             type:String,
             default: ''
@@ -208,6 +216,44 @@ Vue.component('carousel',{
                 return this.currentIndex = this.lastImageIndex
             }
             return this.currentIndex = this.currentIndex - 1
+        },
+        /**
+         * Autoplay
+         * @description: Autoplay slides
+         */
+        Autoplay(){
+            var vm = this
+            if(this.canAutoplay){
+                var hidden
+                var visibilityChange
+                if(typeof document.hidden !== "undefined"){
+                    hidden = "hidden"
+                    visibilityChange = "visibilitychange"
+                }
+                else if(typeof document.msHidden !== "undefined"){
+                    hidden = "msHidden"
+                    visibilityChange = "msvisibilitychange"
+                }
+                else if(typeof document.webkitHidden !== "undefined"){
+                    hidden = "webkitHidden"
+                    visibilityChange = "webkitvisibilitychange"
+                }
+                var startAutoplay = setInterval(vm.IncrementImage, vm.autoPlayInterval)
+
+                window.addEventListener(visibilityChange,function () {
+                    if(document[hidden]) {
+                        console.log('hidden')
+                        return clearInterval(startAutoplay)
+                    } 
+                    console.log('shown')
+                    return startAutoplay = setInterval(vm.IncrementImage, vm.autoPlayInterval)
+                })
+            }
         }
+
+    },
+    mounted(){
+        this.Autoplay()
     }
+
 })

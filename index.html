@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" type = "image/png" href = "img/favicon.png">
+    <!-- For apple devices -->
+    <link rel = "apple-touch-icon" type = "image/png" href = "img/favicon.png"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#e24257">
-    
+        <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#e40220">
+
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#e24257">
+    <meta name="msapplication-navbutton-color" content="#e40220">
 
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
@@ -19,29 +22,31 @@
     <link rel="stylesheet" type="text/css" href="css/home_v1.css">
     <script src="https://kit.fontawesome.com/801a91aeab.js"></script>
     <title>Welcome to Ace Caps</title>
-    <script src="js/vue.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 
 <body>
     <div id="app">
-        
+
         <modal :is-open="modalIsOpen" @close-modal="CloseModal">
             <template slot="description">
-                    <h4 class="modal-content">Video Expose</h4>
-                    <p class="modal-content">{{ videoInfo.vTitle }}</p>
+                <h4 class="modal-content">Video Expose</h4>
+                <p class="modal-content">{{ videoInfo.vTitle }}</p>
             </template>
             <template slot="body">
-                    <iframe width="100%" height="315" :src="videoInfo.vLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                   <!--<video class="video-modal" :src="videoInfo.vLink" controls></video>-->
+                <iframe width="100%" height="315" :src="videoInfo.vLink" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <!--<video class="video-modal" :src="videoInfo.vLink" controls></video>-->
             </template>
         </modal>
 
         <!--Begin Navbar-->
         <header class="navbar">
             <div>
-                <div class="navbar_logo">
+                <a href="index.html" class="navbar_logo">
                     <img src="img/logo.png" alt="ace caps logo">
-                </div>
+                </a>
                 <nav class="navbar_link-container" :class="{'navbar_container-open': navIsOpen}">
                     <a href="#" class="navbar-cancel" @click.prevent="HideNavLink">
                         <i class="fas fa-times"></i>
@@ -66,22 +71,26 @@
         <!--Begin Hero session-->
         <section class="hero">
             <div>
-                <h1 class="hero-header secondary-font slideUp">Caps <span class="highlight">hand-crafted</span> and best
+                <h1 class="hero-header secondary-font hide-slideUp">Caps <span class="highlight">hand-crafted</span> and best
                     fitting for <span class="highlight">Royalty</span></h1>
-                <div class="hero-text slideUp">
+                <div class="hero-text hide-slideUp">
                     <p>Welcome to <b>Ace Caps</b>, Home for the best quality, hand crafted, custom designed and value
                         assured traditional caps. Our products possess unique features and styles to fit all traditional
                         attires and wears. It is a combination of Creativity and Human Ingenuity</p>
-                    <button class="btn btn-inverse btn-inverse-primary slideUp">
+                    <a href="contact.html" class="btn btn-inverse btn-inverse-primary hide-slideUp">
                         Make an order today
-                    </button>
+                    </a>
                 </div>
-                <div class="hero-image slideInRight">
-                    <div>
-                        <img src="img/hero-image.jpg" alt="Ahaba traditional cap">
-                    </div>
+                <div class="hero-image hide-slideInLeft">
+                    <carousel 
+                        transition='zoom' 
+                        :decrease-btn-class="['carousel-btn']"
+                        :increase-btn-class="['carousel-btn']"
+                        :images="['img\\Thumbnails\\ahaba_traditional.png','img\\Thumbnails\\syn_leopard.png','img\\Thumbnails\\asho_oke_green.png','img\\Thumbnails\\lace_traditional.png']"
+                        :can-autoplay="true">
+                    </carousel>
                 </div>
-                <div class="hero-social">
+                <div class="hero-social hide-slideInLeft">
                     <a href=""><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-instagram"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -93,11 +102,11 @@
         <section class="benefit">
             <div>
                 <!--Begin Benefit header-->
-                <h2 class="benefit-header secondary-font">Our exotic caps are 100% <span
+                <h2 class="benefit-header secondary-font hide-slideInRight">Our exotic caps are 100% <span
                         class="highlight">customizable</span> and <span class="highlight">renewable</span></h2>
                 <!--End Benefit header-->
                 <!--Start Benefit Illustrations-->
-                <div class="benefit-img-container">
+                <div class="benefit-img-container hide-slideInLeft">
                     <div class="benefit-image-1">
                         <img src="img/benefit-illusration.png" alt="">
                     </div>
@@ -108,12 +117,14 @@
                 <!--End Benefit Illusrations-->
                 <!--Start Benefit 1-->
                 <div class="benefit-1">
-                    <h3>Customizable</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum modi reprehenderit consequuntur
-                        vero consectetur quae non, cum aliquid quos nulla ut explicabo. Voluptas maxime nemo beatae
-                        deserunt
-                        totam accusamus soluta?</p>
-                    <a href="#" @click.prevent="ShowVideo('https://www.youtube.com/embed/3Cw5kaKUpBw','How to take measurement of yourself')" class="media-link">
+                    <h3 class="hide-slideInRight">Customizable</h3>
+                    <p class="hide-slideInRight">Ace caps are specially designed for all our client. We design our caps based on some standard
+                        head measurments (22 1/2 inches or 57.5 cm, 23 inches or 58.5 cm, 23 1/2 inches or 59.5 cm) but
+                        due to variations in head measurements of our clients, we also design based on custom sizes sent
+                        to us</p>
+                    <a href="#"
+                        @click.prevent="ShowVideo('https://www.youtube.com/embed/3Cw5kaKUpBw','How to take measurement of yourself')"
+                        class="media-link hide-slideUp">
                         <div class="media-btn">
                             <button><i class="fas fa-play"></i></button>
                         </div>
@@ -126,13 +137,11 @@
                 <!--End Benefit 1-->
                 <!--Start Benefit 1-->
                 <div class="benefit-2">
-                    <h3>Renewable</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quisquam reprehenderit porro
-                        laborum
-                        quo exercitationem odit fuga, alias quod aut minima repellendus quia earum ad atque possimus
-                        vero
-                        deserunt magni?</p>
-                    <a href="#" class="media-link" @click.prevent="ShowVideo('https://www.youtube.com/embed/ubmljnY3W7o','How to carefully wash your caps')">
+                    <h3 class="hide-slideInRight">Renewable</h3>
+                    <p class="hide-slideInRight">Our caps stand out not only for their vibrance but also for their durability. Washing and rinsing
+                        our caps is an extremely stress-free and swift activity</p>
+                    <a href="#" class="media-link hide-slideUp"
+                        @click.prevent="ShowVideo('https://www.youtube.com/embed/ubmljnY3W7o','How to carefully wash your caps')">
                         <div class="media-btn">
                             <button><i class="fas fa-play"></i></button>
                         </div>
@@ -149,25 +158,26 @@
         <!--Start Services-->
         <section class="service-section">
             <div>
-                <h2 class="service-header secondary-font">We offer <span class="highlight">bespoke services</span> that leave nothing to be desired</h2>
+                <h2 class="service-header secondary-font hide-slideInRight">We offer <span class="highlight">bespoke services</span> that
+                    leave nothing to be desired</h2>
                 <div class="service-list">
                     <!--Start Services-->
-                    <div class="service">
+                    <div class="service hide-slideInRight">
                         <i class="far fa-flag"></i><br>
                         <h3>Nationwide Delivery</h3>
                         <p>We deliver to our clients within Nigeria through e-commerce platforms like Konga.com</p>
                     </div>
                     <!--End Services-->
                     <!--Start Services-->
-                    <div class="service">
+                    <div class="service hide-slideInRight">
                         <i class="fas fa-tape"></i><br>
                         <h3>Custom Specification</h3>
-                        <p>Our caps come in standard sizes (22.5, 23 and 23.5 inches) but are customizable based on
+                        <p>Our caps come in standard sizes (22 1/2 inches or 57.5 cm, 23 inches or 58.5 cm, 23 1/2 inches or 59.5 cm) but are customizable based on
                             customer's demand</p>
                     </div>
                     <!--End Services-->
                     <!--Start Services-->
-                    <div class="service">
+                    <div class="service hide-slideInRight">
                         <i class="far fa-user"></i><br>
                         <h3>Unique Designs</h3>
                         <p>We make use of traditional materials such as Aso Oke in crafting our caps which give them a
@@ -175,7 +185,7 @@
                     </div>
                     <!--End Services-->
                     <!--Start Services-->
-                    <div class="service">
+                    <div class="service hide-slideInRight">
                         <i class="fas fa-globe-europe"></i><br>
                         <h3>World Wide Delivery</h3>
                         <p>Our delivery base spans beyond Nigeria</p>
@@ -189,7 +199,7 @@
         <!--Ecommerce Section-->
         <section class="ecommerce-section">
             <div>
-                <div class="ecommerce-detail">
+                <div class="ecommerce-detail hide-slideInRight">
                     <h2 class="ecommerce-header secondary-font">
                         We deliver Nationwide and Beyond
                     </h2>
@@ -205,7 +215,7 @@
                         <a href="contact.html" class="btn btn-inverse btn-inverse-primary">contact us</a>
                     </div>
                 </div>
-                <div class="ecommerce-image">
+                <div class="ecommerce-image hide-slideInLeft">
                     <img src="img/courier-service.png"
                         style="width:100%; height: auto;position:relative;margin: auto;margin-bottom: -8px;"
                         alt="delivery man">

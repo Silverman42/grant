@@ -283,8 +283,8 @@ footer>div .site-identity>img{
 }
 
 .cite-profile .cite-image>img {
-    width: var(--spacing-lg-2);
-    height: var(--spacing-lg-2);
+    width: var(--spacing-lg-3);
+    height: var(--spacing-lg-3);
     border-radius: 100%;
 }
 

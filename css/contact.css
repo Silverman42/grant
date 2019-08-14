@@ -5,6 +5,17 @@
 .contact-header>div {
     display: grid;
     grid-template-columns: 100%;
+    align-items: center;
+}
+
+.contact-header .contact-image>img{
+    display: block;
+    position: relative;
+    margin:auto;
+    width: 80%;
+    height: auto;
+    filter: drop-shadow(var(--shadow) var(--primary-dark));
+    -webkit-filter: drop-shadow(var(--shadow) var(--primary-dark));
 }
 
 /*
@@ -48,7 +59,7 @@
     }
 
     .contact-header>div {
-        grid-template-columns: 50%;
+        grid-template-columns: 1fr 1fr;
     }
 
     .contact_form-container {

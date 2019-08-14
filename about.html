@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- For apple devices -->
+    <link rel="apple-touch-icon" type="image/png" href="img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#e24257">
-    
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#e40220">
+
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#e24257">
+    <meta name="msapplication-navbutton-color" content="#e40220">
 
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
@@ -26,9 +29,9 @@
         <!--Begin Navbar-->
         <header class="navbar">
             <div>
-                <div class="navbar_logo">
+                <a href="index.html" class="navbar_logo">
                     <img src="img/logo.png" alt="ace caps logo">
-                </div>
+                </a>
                 <nav class="navbar_link-container" :class="{'navbar_container-open': navIsOpen}">
                     <a href="#" class="navbar-cancel" @click.prevent="HideNavLink">
                         <i class="fas fa-times"></i>
@@ -57,7 +60,7 @@
                         class="highlight">hand-crafted</span> with our customer's satisfaction as the priority"</h1>
                 <div class="cite-profile">
                     <div class="cite-image">
-                        <img src="/img/benefit-illusration.png" alt="">
+                        <img src="/img/ceo_2.jfif" alt="">
                     </div>
                     <div class="cite-data">
                         <p class="cite-name">Chief Ojeih Eso</p>
@@ -86,9 +89,9 @@
         </section>
         <!--End Mission and History Section-->
         <!--Ecommerce Section-->
-        <section class="ecommerce-section">
+                <section class="ecommerce-section">
             <div>
-                <div class="ecommerce-detail">
+                <div class="ecommerce-detail hide-slideInRight">
                     <h2 class="ecommerce-header secondary-font">
                         We deliver Nationwide and Beyond
                     </h2>
@@ -104,7 +107,7 @@
                         <a href="contact.html" class="btn btn-inverse btn-inverse-primary">contact us</a>
                     </div>
                 </div>
-                <div class="ecommerce-image">
+                <div class="ecommerce-image hide-slideInLeft">
                     <img src="img/courier-service.png"
                         style="width:100%; height: auto;position:relative;margin: auto;margin-bottom: -8px;"
                         alt="delivery man">
@@ -136,9 +139,9 @@
                 <div class="site-links">
                     <h4>SOCIAL</h4>
                     <div class="footer-social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
