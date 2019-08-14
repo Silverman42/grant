@@ -19,8 +19,11 @@
 .mission-section>div{
     display: grid;
     grid-template-columns: 100%;
-   
+    align-items: center  
 
+}
+.mission-details .mission-header{
+    font-size: var(--size-6)
 }
 .mission-image>img{
     filter: drop-shadow(var(--shadow) var(--primary-dark));
