@@ -40,7 +40,7 @@
  */
 Vue.component('contact-form',{
     template:`
-        <form class="contact_form" action="https://formspree.io/snkeze9@gmail.com" method="POST">
+        <form class="contact_form" action="https://formspree.io/esogbuzieahaba@gmail.com" method="POST">
         <div class="form-group">
             <label for="client_name">Client Name<sup class="form-required">*</sup></label>
             <input type="text" id="client_name" placeholder="Full Name" name="name" required>
