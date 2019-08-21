@@ -4,10 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" type = "image/png" href = "img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- Primary Meta Tags -->
+    <title>Our Shelve of Exotic Caps</title>
+    <meta name="title" content="Our Shelve of Exotic Caps">
+    <meta name="description" content="Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet, very affordable">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acecaps.com.ng/inventory">
+    <meta property="og:title" content="Our Shelve of Exotic Caps">
+    <meta property="og:description" content="Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet, very affordable">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://acecaps.com.ng/inventory">
+    <meta property="twitter:title" content="Our Shelve of Exotic Caps">
+    <meta property="twitter:description" content="Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet, very affordable">
+    <meta property="twitter:image" content="">
     <!-- For apple devices -->
-    <link rel = "apple-touch-icon" type = "image/png" href = "img/favicon.png"/>
+    <link rel="apple-touch-icon" type="image/png" href="img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#e40220">
+
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#e40220">
 
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
@@ -16,7 +39,6 @@
     <link rel="stylesheet" type="text/css" href="css/animations.css">
     <link rel="stylesheet" type="text/css" href="css/inventory.css">
     <script src="https://kit.fontawesome.com/801a91aeab.js"></script>
-    <title>Inventory</title>
 </head>
 
 <body>
@@ -31,34 +53,35 @@
                 <aside class="cap_info-modal">
                     <h5 class="header secondary-font">{{selectedCap.name || 'Selected Cap'}}</h5>
                     <div class="carousel-container">
-                        <carousel 
-                            transition='zoom' 
-                            :decrease-btn-class="['carousel-btn']"
-                            :increase-btn-class="['carousel-btn']"
-                            :images="selectedCap.images"></carousel>
+                        <carousel transition='zoom' :decrease-btn-class="['carousel-btn']"
+                            :increase-btn-class="['carousel-btn']" :images="selectedCap.images"></carousel>
                     </div>
                     <div class="infodata-container">
                         <article class="infodata">
-                            <h6 class="header">Available Sizes</h6>    
-                            <span v-if="modalCapMeasurement == 'inch'" v-for="(size,index) in capMeasurement" :keys="index" class="list">
+                            <h6 class="header">Available Sizes</h6>
+                            <span v-if="modalCapMeasurement == 'inch'" v-for="(size,index) in capMeasurement"
+                                :keys="index" class="list">
                                 {{size.inch}}"
                             </span>
-                            <span v-if="modalCapMeasurement == 'cm'" v-for="(size,index) in capMeasurement" :keys="index" class="list">
+                            <span v-if="modalCapMeasurement == 'cm'" v-for="(size,index) in capMeasurement"
+                                :keys="index" class="list">
                                 {{size.cm}} cm
                             </span>
                             <div style="padding: var(--spacing-2); text-align: right">
-                                <a href="#" class="anchor-primary" v-if="modalCapMeasurement == 'inch'" @click="SwitchModalMeasurement('cm')">Switch to Centimeters (cm)</a>
-                                <a href="#" class="anchor-primary" v-if="modalCapMeasurement == 'cm'" @click="SwitchModalMeasurement('inch')">Switch to Inches (")</a>
+                                <a href="#" class="anchor-primary" v-if="modalCapMeasurement == 'inch'"
+                                    @click="SwitchModalMeasurement('cm')">Switch to Centimeters (cm)</a>
+                                <a href="#" class="anchor-primary" v-if="modalCapMeasurement == 'cm'"
+                                    @click="SwitchModalMeasurement('inch')">Switch to Inches (")</a>
                             </div>
                         </article>
                         <div class='infodata'>
-                            
+
                         </div>
                         <div class='infodata'>
                             <h6 class="header">Visit our e-commerce outlet</h6>
                             <div class="ecommerce">
                                 <a href="#"><img src="img/ecommerce-outlets/konga_black.png" alt="konga.com"></a>
-                            </div> 
+                            </div>
                             <h6 class="header">OR</h6>
                             <a href="contact.html#contact-form" class="btn btn-primary">Make a custom order</a>
                         </div>
@@ -98,7 +121,8 @@
             <div>
                 <p class="hide-slideInRight"><b>INVENTORY</b></p>
                 <h1 class="inventory_hero-header secondary-font hide-slideInRight">Our Shelve of Exotic Caps</h1>
-                <p class="hide-slideInRight">Our caps vary in designs, colours and sizes. They are made to be void of any inconvenience and yet,
+                <p class="hide-slideInRight">Our caps vary in designs, colours and sizes. They are made to be void of
+                    any inconvenience and yet,
                     very affordable</p>
             </div>
         </section>
@@ -118,7 +142,7 @@
         </section>
         <!--End Cap List-->
         <!--Ecommerce Section-->
-                <section class="ecommerce-section">
+        <section class="ecommerce-section">
             <div>
                 <div class="ecommerce-detail hide-slideInRight">
                     <h2 class="ecommerce-header secondary-font">
@@ -168,7 +192,8 @@
                 <div class="site-links">
                     <h4>SOCIAL</h4>
                     <div class="footer-social">
-                        <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i
+                                class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
