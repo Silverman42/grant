@@ -4,11 +4,10 @@
 }
 
 body {
-    background: var(--primary);
     margin: 0px;
     padding: 0px;
     font-family: var(--primary-font);
-    font-size: var(--size-2);
+    font-size: var(--size-3);
     line-height: 1.9;
 }
 
@@ -28,7 +27,8 @@ footer {
 }
 
 section>div,
-footer>div, header>div {
+footer>div,
+header>div {
     width: 90%;
     margin: auto;
 }
@@ -41,7 +41,7 @@ address {
 .highlight {
     display: inline-block;
     position: relative;
-    color: white;
+    color: var(--primary-light);
 }
 
 .highlight::after {
@@ -52,24 +52,62 @@ address {
     opacity: 0.5;
     bottom: 5px;
     left: 0px;
-    background: var(--primary-lighter);
+    background: var(--primary-light);
     padding: var(--spacing-2);
+}
+
+/*
+**Shadow
+*/
+.shadow-primary-dark {
+    filter: drop-shadow(var(--shadow) var(--primary-dark));
+    -webkit-filter: drop-shadow(var(--shadow) var(--primary-dark));
+}
+
+.shadow-primary-darker {
+    filter: drop-shadow(var(--shadow) var(--primary-darker));
+    -webkit-filter: drop-shadow(var(--shadow) var(--primary-darker));
+}
+
+.shadow-secondary-dark {
+    filter: drop-shadow(var(--shadow) var(--secondary-dark));
+    -webkit-filter: drop-shadow(var(--shadow) var(--secondary-dark));
+}
+
+.shadow-secondary-darker {
+    filter: drop-shadow(var(--shadow) var(--secondary-darker));
+    -webkit-filter: drop-shadow(var(--shadow) var(--secondary-darker));
+}
+
+.shadow-light {
+    filter: drop-shadow(var(--shadow) var(--light-3));
+    -webkit-filter: drop-shadow(var(--shadow) var(--light-3));
 }
 
 /*
 ** Anchor
 **/
 
-.anchor-primary{
+.anchor-primary {
+    font-size: var(--size-3);
     color: var(--primary);
+    text-decoration: none;
+    font-weight: bolder;
 }
-.anchor-primary:hover, .anchor-primary:focus{
-    color: var(--primary-light);
+
+.anchor-primary:hover,
+.anchor-primary:focus {
+    color: var(--primary-dark);
+}
+
+.anchor-arrowed::after {
+    content: ' →';
 }
 
 .btn {
     box-shadow: 0px 0px 0px 0px transparent;
     border: 0px solid transparent;
+    border-radius: 5px;
     padding: var(--spacing-6) var(--spacing-lg-1);
     font-weight: bolder;
     text-transform: capitalize;
@@ -77,6 +115,8 @@ address {
     text-decoration: none;
     font-size: var(--size-2);
     font-family: var(--primary-font);
+    transform: all 0.2s ease-out;
+    --webkit-transform: all 0.2s ease-out;
 }
 
 .btn:hover,
@@ -86,18 +126,34 @@ address {
 
 .btn-primary {
     background: var(--primary);
-    color: var(--white);
+    color: var(--white) !important;
+    transition: all 0.3s ease-out;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: var(--primary-light);
+    background: var(--primary-dark);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: var(--primary) !important;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background: var(--primary);
+    color: var(--white) !important;
+    ;
 }
 
 .btn-inverse {
     border: 1px solid var(--white);
     background: transparent;
     color: var(white);
+    transition: all 0.3s ease-out;
 }
 
 .btn-inverse-primary:hover,
@@ -110,6 +166,7 @@ address {
 .btn-inverse-p-darker:focus {
     background: var(--white);
     color: var(--primary-darker);
+    transition: all 0.3s ease-out;
 }
 
 /*
@@ -194,19 +251,22 @@ footer>div {
 }
 
 footer a {
+    font-size: var(--size-2);
     color: var(--primary-lighter);
     text-decoration: none;
 }
 
 footer a:hover,
 footer a:focus {
-    color: var(--white);
+    color: var(--light-1);
     text-decoration: none;
 }
-footer>div .site-identity>img{
+
+footer>div .site-identity>img {
     width: 50px;
     height: 100%;
 }
+
 /*
 ** Ecommerce Section
 **/
@@ -316,7 +376,7 @@ textarea {
     font-weight: 600
 }
 
-option{
+option {
     color: var(--black);
 }
 
@@ -332,75 +392,106 @@ textarea:hover {
 /*
 ** Navbar
 **/
+.navbar {
+    background: var(--secondary);
+}
+
 .navbar>div {
     display: grid;
     grid-template-columns: 30% 50% 20%;
     align-content: center;
 }
-.navbar_logo>img{
+
+.navbar_logo>img {
     width: 70px;
     height: auto;
     margin-top: var(--spacing-5)
 }
-.navbar_link-container{
+
+.navbar_link-container {
     display: none;
 }
-.navbar_link-container>ul{
+
+.navbar_link-container>ul {
     list-style: none;
     padding: var(--spacing-5);
     padding-top: var(--spacing-9);
 }
-.navbar-link>li>a{
+
+.navbar-link {
+    display: block;
+}
+
+.navbar-link>li>a {
     display: inline-block;
     position: relative;
     text-decoration: none;
     font-weight: bolder;
     transition: all 0.3s ease-in-out;
     opacity: 0;
+    color: var(--light-1);
 }
-.navbar-link>li>a:hover, .navbar-link>li>a:focus{
+
+.navbar-link>li>.link {
+    padding-top: var(--spacing-5);
+    padding-bottom: var(--spacing-5);
+    font-size: var(--size-2)
+}
+
+.navbar-link>li>.link:hover,
+.navbar-link>li>.link:focus {
     text-decoration: none;
-    color: var(--white);
+    color: var(--black);
 }
-.navbar-link>li>a:hover:after, .navbar-link>li>a:focus:after{
+
+.navbar-link>li>.link:after {
     display: block;
     position: absolute;
     content: '';
-    width: 100%;
-    padding: var(--spacing-1);
-    background: var(--white);
+    padding: 0px;
+    background: var(--black);
     bottom: 0px;
     left: 0px;
     opacity: 0.5;
+    width: 0%;
+    transition: width 0.3s ease-out;
+    -webkit-transition: width 0.3s ease-out;
 }
 
-.navbar_menu{
+.navbar-link>li>.link:hover:after,
+.navbar-link>li>.link:focus:after {
+    width: 100%;
+    padding: var(--spacing-1);
+}
+
+.navbar_menu {
     grid-column: 3;
     justify-self: end;
     padding: var(--spacing-3);
     align-self: center;
 }
-.navbar_menu-btn{
+
+.navbar_menu-btn {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    border: 1px solid var(--white);
     padding: var(--spacing-1);
     width: var(--spacing-lg-2);
     height: var(--spacing-lg-2)
 }
-.navbar_menu-btn>span{
+
+.navbar_menu-btn>span {
     display: inline-block;
     width: 60%;
     margin: var(--spacing-2) auto;
     padding: 1px;
-    background: var(--white);
+    background: var(--primary-dark);
 }
 
 /*
 ** Modal
 **/
-.modal-background{
+.modal-background {
     background: var(--black);
     opacity: 0.8;
     z-index: 30;
@@ -412,7 +503,7 @@ textarea:hover {
     left: 0px;
 }
 
-.modal-container{
+.modal-container {
     display: block;
     position: fixed;
     left: 5vw;
@@ -423,58 +514,126 @@ textarea:hover {
     z-index: 40;
 }
 
-.modal-container .modal-content{
+.modal-container .modal-content {
     color: var(--black) !important;
 }
 
-.modal-header{
+.modal-header {
     background: var(--white);
     position: relative;
     display: grid;
     grid-template-columns: 80% 20%;
     border-bottom: 0.8px solid var(--light-3);
-}  
-.modal-header>.modal-descr, .modal-header>.modal-close{
+}
+
+.modal-header>.modal-descr,
+.modal-header>.modal-close {
     padding: var(--spacing-3) var(--spacing-8);
 }
 
-.modal-header>.modal-close{
+.modal-header>.modal-close {
     font-size: var(--size-5);
     text-align: center;
 }
-.hide-overflow{
+
+.hide-overflow {
     overflow: hidden;
+}
+
+/*
+** Subscribe menu
+*/
+.subscribe>div {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.subscribe .subscribe-form {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    --webkit-transition: all 0.3s ease-out;
+}
+.subscribe .subscribe-form:hover, .subscribe .subscribe-form:focus{
+    border: 1px solid var(--primary);
+}
+.subscribe .subscribe-form :first-child{
+    border-right: 1px solid white;
+}
+
+.subscribe .subscribe-form>button{
+    padding: var(--spacing-8) var(--spacing-8);
+    display: inline-block;
+    width: 30%;
+    border: 0px solid transparent;
+    background: transparent;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease-out;
+    --webkit-transition: all 0.3s ease-out;
+}
+.subscribe .subscribe-form>button:hover, .subscribe .subscribe-form>button:focus{
+    color: var(--primary-darker);
+    background: white;
+}
+.subscribe .subscribe-form>input{
+    border: 0px solid transparent;
+    outline: none;
+    width: 70%;
+    background: transparent;
+    color: var(--light-2)
 }
 
 /*
 ** For Mobile View only
 **/
-@media(max-width: 760px){
-    .navbar_container-open{
-        display:block;
+@media(max-width: 760px) {
+    .navbar_container-open {
+        display: block;
         width: 100%;
-        background: var(--primary-dark);
+        background: var(--secondary);
         position: fixed;
         z-index: 10;
         top: 0px;
-        left:0px;
-        bottom:0px;
+        left: 0px;
+        bottom: 0px;
         height: 100%;
         overflow: auto;
+        margin: var(--spacing-7)
     }
-    .navbar_container-open .navbar-link>li>a{
-        font-size: var(--spacing-lg-1);
+
+    .navbar_container-open .navbar-link>li>a {
+        font-size: var(--size-4);
     }
-    .navbar_container-open .navbar-cancel{
+
+    .navbar_container-open .navbar-link>li>.btn {
+        display: inline-block;
+        margin: var(--spacing-7) 0px;
+        font-size: var(--size-4);
+    }
+
+    .navbar_container-open .navbar-cancel {
         display: block;
         text-align: right;
         width: 100%;
-        color: var(--white);
+        color: var(--light-1);
         text-decoration: none;
         padding: var(--spacing-7);
         font-size: var(--size-7)
     }
+
+    .navbar_container-open .navbar-cancel:hover, 
+    .navbar_container-open .navbar-cancel:focus
+     {
+        color: var(--black);
+    }
 }
+
 /*
 For Desktop view
 **/
@@ -482,7 +641,7 @@ For Desktop view
 
     section>div,
     footer>div {
-        width: 60%;
+        width: 80%;
     }
 
     /*
@@ -512,36 +671,49 @@ For Desktop view
     ** Navbar
     **/
     .navbar>div {
-        width: 70%;
+        width: 80%;
         grid-template-columns: 30% 70%;
     }
-    .navbar_link-container{
+
+    .navbar_link-container {
         display: block;
         position: relative;
         z-index: 1;
-        height: auto; 
+        height: auto;
     }
-    .navbar_link-container>.navbar-cancel{
+
+    .navbar_link-container>.navbar-cancel {
         display: none;
     }
-    .navbar-link{
+
+    .navbar-link {
         padding: 0px;
         display: flex;
+        align-items: center;
         width: 100%;
         justify-content: flex-end;
     }
-    .navbar-link>li{
+
+    .navbar-link>li {
         padding: var(--spacing-5);
     }
-    .navbar_menu{
+
+    .navbar_menu {
         display: none;
     }
 
     /*
     ** Modal 
     **/
-    .modal-container{
+    .modal-container {
         width: 60vw;
         left: 20vw
+    }
+
+    /*
+    ** Subscribe menu
+    */
+    .subscribe>div {
+        width: 60%;
     }
 }

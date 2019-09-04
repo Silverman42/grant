@@ -34,14 +34,16 @@
     <link rel="apple-touch-icon" type="image/png" href="img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#e40220">
+    <meta name="theme-color" content="#022be4">
 
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#e40220">
+    <meta name="msapplication-navbutton-color" content="#022be4">
 
     <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#e24257">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#022be4">
+    <link rel="stylesheet" href="font/font.css">
     <link rel="stylesheet" type="text/css" href="css/variables.css">
+    <link rel="stylesheet" type="text/css" href="css/utility.css">
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/animations.css">
     <link rel="stylesheet" type="text/css" href="css/home_v1.css">
@@ -69,17 +71,18 @@
         <header class="navbar">
             <div>
                 <a href="index.html" class="navbar_logo">
-                    <img src="img/logo.png" alt="ace caps logo">
+                    <img src="" alt="ace caps logo">
                 </a>
                 <nav class="navbar_link-container" :class="{'navbar_container-open': navIsOpen}">
                     <a href="#" class="navbar-cancel" @click.prevent="HideNavLink">
                         <i class="fas fa-times"></i>
                     </a>
                     <ul class="navbar-link">
-                        <li><a class="slideUp" href="index.html">Home</a></li>
-                        <li><a class="slideUp" href="contact.html">Contact Us</a></li>
-                        <li><a class="slideUp" href="about.html">About</a></li>
-                        <li><a class="slideUp" href="inventory.html">Inventory</a></li>
+                        <li><a class="link slideUp" href="index.html">Home</a></li>
+                        <li><a class="link slideUp" href="contact.html">Contact Us</a></li>
+                        <li><a class="link slideUp" href="about.html">About</a></li>
+                        <li><a class="btn btn-outline-primary slideUp" href="inventory.html">Sign In</a></li>
+                        <li><a class="btn btn-primary slideUp" href="inventory.html">Register</a></li>
                     </ul>
                 </nav>
                 <div class="navbar_menu">
@@ -95,23 +98,32 @@
         <!--Begin Hero session-->
         <section class="hero">
             <div>
-                <h1 class="hero-header secondary-font hide-slideUp">Caps <span class="highlight">hand-crafted</span> and
-                    best
-                    fitting for <span class="highlight">all Occasions</span></h1>
-                <div class="hero-text hide-slideUp">
-                    <p>Welcome to <b>ACE CAPS</b>, Home for the best quality, hand crafted, custom designed and value
-                        assured traditional caps. Our products possess unique features and styles to fit all traditional
-                        attires and wears. It is a combination of Creativity and Human Ingenuity</p>
-                    <a href="contact.html" class="btn btn-inverse btn-inverse-primary hide-slideUp">
-                        Make an order today
+                <div class="hero-text hide-slideInRight">
+                    <h1 class="hero-header secondary-font hide-slideUp mg-b-lg-2 tx-dark">
+                        Help build the world with a <span class="highlight">Priceless Idea</span>
+                    </h1>
+                    <p class="mg-b-lg-2 tx-dark">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quaerat
+                        sapiente error voluptate dignissimos ab, repellat nulla illum temporibus veritatis veniam
+                        numquam cumque doloribus eaque repellendus consequuntur neque accusantium laborum.</p>
+                    <a href="contact.html" class="btn btn-primary hide-slideUp">
+                        Register Your Company
                     </a>
                 </div>
-                <div class="hero-image hide-slideInLeft">
+                <div class="hero-image hide-slideInLeft pd-t-lg-1 pd-b-lg-1">
+                    <img src='img/hero/image.jpg' class="shadow-primary-darker" alt="">
+                    <figure class="hero-bg-pattern two">
+                        <img src="img/patterns/dotted-box.svg" alt="">
+                    </figure>
+                    <figure class="hero-bg-pattern one">
+                        <img src="img/patterns/dotted-box.svg" alt="">
+                    </figure>
+                    <!--  
                     <carousel transition='swipe' :decrease-btn-class="['carousel-btn']"
                         :increase-btn-class="['carousel-btn']"
                         :images="['img\\slides\\ahaba.jpg','img\\slides\\syn_leopard.jpg','img\\slides\\asho_oke_green.jpg','img\\slides\\lace_traditional.jpg','img\\slides\\olinzele_trad_cap.jpg','img\\slides\\asho_oke_brown.jpg']"
                         :can-autoplay="true">
                     </carousel>
+                    -->
                 </div>
                 <div class="hero-social hide-slideInLeft">
                     <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i class="fab fa-facebook-f"></i></a>
@@ -124,128 +136,146 @@
         <!--Begin Feature session-->
         <section class="benefit">
             <div>
-                <!--Begin Benefit header-->
-                <h2 class="benefit-header secondary-font hide-slideInRight">Our exotic caps are 100% <span
-                        class="highlight">customizable</span> and <span class="highlight">renewable</span></h2>
-                <!--End Benefit header-->
-                <!--Start Benefit Illustrations-->
-                <div class="benefit-img-container hide-slideInLeft">
-                    <div class="benefit-image-1">
-                        <img src="img/benefit-illusration.png" alt="">
-                    </div>
-                    <div class="benefit-image-2">
-                        <img src="img/benefit-illustration-2.png" alt="">
-                    </div>
-                </div>
                 <!--End Benefit Illusrations-->
                 <!--Start Benefit 1-->
-                <div class="benefit-1">
-                    <h3 class="hide-slideInRight">Customizable</h3>
-                    <p class="hide-slideInRight">Ace caps are specially designed for all our client. We design our caps
-                        based on some standard
-                        head measurments (22 1/2 inches or 57.5 cm, 23 inches or 58.5 cm, 23 1/2 inches or 59.5 cm) but
-                        due to variations in head measurements of our clients, we also design based on custom sizes sent
-                        to us</p>
-                    <a href="#"
-                        @click.prevent="ShowVideo('https://www.youtube.com/embed/3Cw5kaKUpBw','How to take measurement of yourself')"
-                        class="media-link hide-slideUp">
-                        <div class="media-btn">
-                            <button><i class="fas fa-play"></i></button>
-                        </div>
-                        <div class="media-description">
-                            <p class="media-title">How to take measurement of yourself</p>
-                            <p class="media-type">video</p>
-                        </div>
-                    </a>
+                <div class="benefit-content">
+                    <!--Begin Benefit header-->
+                    <h2 class="header secondary-font hide-slideInRight tx-dark mg-b-lg-2">Create a <span
+                            class="highlight">solution</span> and become an <span class="highlight">employer</span></h2>
+                    <!--End Benefit header-->
+                    <p class="hide-slideInRight tx-light mg-b-lg-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Laborum aut numquam deserunt eveniet commodi quae, illum, dolorum nobis ipsam dolore dicta,
+                        suscipit labore nostrum saepe reiciendis est a vel possimus.</p>
+                    <a href="" class="anchor-primary anchor-arrowed">Register to Get started</a>
                 </div>
                 <!--End Benefit 1-->
-                <!--Start Benefit 1-->
-                <div class="benefit-2">
-                    <h3 class="hide-slideInRight">Renewable</h3>
-                    <p class="hide-slideInRight">Our caps stand out not only for their vibrance but also for their
-                        durability. Washing and rinsing
-                        our caps is an extremely stress-free and swift activity</p>
-                    <a href="#" class="media-link hide-slideUp"
-                        @click.prevent="ShowVideo('https://www.youtube.com/embed/ubmljnY3W7o','How to carefully wash your caps')">
-                        <div class="media-btn">
-                            <button><i class="fas fa-play"></i></button>
-                        </div>
-                        <div class="media-description">
-                            <p class="media-title">How to carefully wash your caps</p>
-                            <p class="media-type">video</p>
-                        </div>
-                    </a>
+                <!--Start Benefit Illustrations-->
+                <div class="benefit-illust-container hide-slideInLeft">
+                    <img class="benefit-image" src="/img/illustrations/entrepreneurs.svg" alt="">
                 </div>
-                <!--End Benefit 1-->
 
             </div>
         </section>
-        <!--Start Services-->
+
+        <!--Registration Steps-->
         <section class="service-section">
             <div>
-                <h2 class="service-header secondary-font hide-slideInRight">We offer <span class="highlight">bespoke
-                        services</span> that
-                    leave nothing to be desired</h2>
+                <h2 class="service-header secondary-font hide-slideInRight tx-dark mg-b-lg-2">How do you get access to a grant ?</h2>
                 <div class="service-list">
                     <!--Start Services-->
-                    <div class="service hide-slideInRight">
-                        <i class="far fa-flag"></i><br>
-                        <h3>Nationwide Delivery</h3>
-                        <p>We deliver to our clients within Nigeria through e-commerce platforms like Konga.com</p>
+                    <div class="service steps hide-slideInRight">
+                        <span>1</span>
+                        <h3 class="tx-dark">Register Company</h3>
+                        <p class="tx-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, tempore
+                            aut atque officia sunt iure, laudantium saepe minima delectus aliquam magnam eligendi
+                            </p>
                     </div>
                     <!--End Services-->
                     <!--Start Services-->
-                    <div class="service hide-slideInRight">
-                        <i class="fas fa-tape"></i><br>
-                        <h3>Custom Specification</h3>
-                        <p>Our caps come in standard sizes (22 1/2 inches or 57.5 cm, 23 inches or 58.5 cm, 23 1/2
-                            inches or 59.5 cm) but are customizable based on
-                            customer's demand</p>
+                    <div class="service steps hide-slideInRight">
+                        <span>2</span>
+                        <h3 class="tx-dark">Activate Account</h3>
+                        <p class="tx-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, tempore
+                            aut atque officia sunt iure, laudantium saepe minima delectus aliquam magnam eligendi</p>
                     </div>
                     <!--End Services-->
                     <!--Start Services-->
-                    <div class="service hide-slideInRight">
-                        <i class="far fa-user"></i><br>
-                        <h3>Unique Designs</h3>
-                        <p>We make use of traditional materials such as Aso Oke in crafting our caps which give them a
-                            majestic outlook</p>
-                    </div>
-                    <!--End Services-->
-                    <!--Start Services-->
-                    <div class="service hide-slideInRight">
-                        <i class="fas fa-globe-europe"></i><br>
-                        <h3>World Wide Delivery</h3>
-                        <p>Our delivery base spans beyond Nigeria</p>
+                    <div class="service steps-inverse hide-slideInRight shadow-secondary-dark">
+                        <span>3</span>
+                        <h3 class="tx-white">Await Grant</h3>
+                        <p class="tx-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, tempore
+                            aut atque officia sunt iure, laudantium saepe minima delectus aliquam magnam eligendi</p>
                     </div>
                     <!--End Services-->
                 </div>
             </div>
         </section>
-        <!--End Services-->
-
-        <!--Ecommerce Section-->
-        <section class="ecommerce-section">
-            <div>
-                <div class="ecommerce-detail hide-slideInRight">
-                    <h2 class="ecommerce-header secondary-font">
-                        We deliver Nationwide and Beyond
-                    </h2>
-                    <p>Make orders for Ace Caps within and outside Nigeria. Visit our stores on any of the E-commerce
-                        outlets below </p>
-                    <div class="ecommerce-outlet">
-                        <a href="#">
-                            <img src="img/ecommerce-outlets/konga.png" alt="konga.com">
-                        </a>
-                    </div>
-                    <p><b>OR</b></p>
-                    <div>
-                        <a href="contact.html" class="btn btn-inverse btn-inverse-primary">contact us</a>
-                    </div>
+        <!--End Steps-->
+        <!--DataCount-->
+        <section>
+            <div class="data-count bg-primary pd-b-5 pd-t-5 shadow-secondary-dark">
+                <div class="data-count--header tx-center hide-slideUp">
+                    <h2 class="tx-white secondary-font">Let our numbers guide you</h2>
                 </div>
-                <div class="ecommerce-image hide-slideInLeft">
-                    <img src="img/courier-service.png"
-                        style="width:100%; height: auto;position:relative;margin: auto;margin-bottom: -8px;"
-                        alt="delivery man">
+                <div class="data-count--counts tx-center pd-t-lg-1 pd-b-lg-1 hide-slideUp">
+                    <span class="bg-primary-light">
+                        <img src="img/icon/002-hired.svg" alt="">
+                    </span>
+                    <h2 style="line-height: 0.8">0</h2>
+                    <p class="tx-size-3">Teams Registered</p>
+                </div>
+                <div class="data-count--counts tx-center pd-t-lg-1 pd-b-lg-1 hide-slideUp">
+                    <span class="bg-primary-light">
+                        <img src="img/icon/003-salary.svg" alt="">
+                    </span>
+                    <h2 style="line-height: 0.8">0</h2>
+                    <p class="tx-size-3">Grants Given</p>
+                </div>
+                <div class="data-count--counts tx-center pd-t-lg-1 pd-b-lg-1 hide-slideUp">
+                    <span class="bg-primary-light">
+                        <img src="img/icon/001-career.svg" alt="">
+                    </span>
+                    <h2 style="line-height: 0.8">0</h2>
+                    <p class="tx-size-3">Projects Completed</p>
+                </div>
+            </div>
+        </section>
+        <!--End DataCount-->
+        <!--Registration Steps-->
+        <section class="service-section bg-secondary">
+            <div>
+                <h2 class="service-header secondary-font hide-slideInRight tx-dark mg-b-lg-2">Hear the stories of our beneficiaries !!</h2>
+                <div class="service-list mg-b-lg-2">
+                    <!--Start Services-->
+                    <div class="service hide-slideInRight bg-white testimony">
+                        <span class="testimony-avatar">
+                            <img src="" alt="">
+                        </span>
+                        <h4 class="tx-dark">Registered Company</h4>
+                        <p class="tx-light tx-size-2">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, tempore
+                            aut atque officia sunt iure, laudantium saepe minima delectus aliquam magnam eligendi"
+                            </p>
+                    </div>
+                    <!--End Services-->
+                    <!--Start Services-->
+                    <div class="service hide-slideInRight bg-white testimony">
+                        <span class="testimony-avatar">
+                            <img src="" alt="">
+                        </span>
+                        <h4 class="tx-dark">Registered Company</h4>
+                        <p class="tx-light tx-size-2">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, tempore
+                            aut atque officia sunt iure, laudantium saepe minima delectus aliquam magnam eligendi"
+                            </p>
+                    </div>
+                    <!--End Services-->
+                    <!--Start Services-->
+                    <div class="service hide-slideInRight bg-white testimony">
+                        <span class="testimony-avatar">
+                            <img src="img/lace/1.jpg" alt="">
+                        </span>
+                        <h4 class="tx-dark">Registered Company</h4>
+                        <p class="tx-light tx-size-2">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, tempore
+                            aut atque officia sunt iure, laudantium saepe minima delectus aliquam magnam eligendi"
+                            </p>
+                    </div>
+                    <!--End Services-->
+                </div>
+                <div class="service-loader hide-slideInRight">
+                    <a href="" class="anchor-primary anchor-arrowed">Read more stories</a>
+                </div>
+            </div>
+        </section>
+        <!--End Steps-->
+        <!--Ecommerce Section-->
+        <section >
+            <div class="bg-primary-darker pd-b-5 pd-t-5 subscribe shadow-light " style="border-radius: 5px; background-image: var(--dark-pattern)">
+                <div class="tx-center">
+                    <h2 class="secondary-font hide-slideUp">Subscribe to our Newsletter</h2>
+                    <p class="tx-secondary tx-light-blue mg-b-lg-1 hide-slideUp">Sign up to recieve updates and tips in your email</p>
+                    <form class="subscribe-form mg-b-lg-1 hide-slideUp">
+                        <input type="email" name="" required id="" placeholder="no-reply@example.com">
+                        <button type="submit">Subcribe</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -254,25 +284,25 @@
         <footer>
             <div>
                 <div class="site-identity">
-                    <img src="img/logo.png" alt="ace-cap logo">
-                    <p class="secondary-font">Ace Caps 2019 &copy;</p>
+                    <img src="" alt="ace-cap logo">
+                    <p class="secondary-font tx-light">Example.com 2019 &copy;</p>
                 </div>
 
                 <div class="site-links">
-                    <h4>LINKS</h4>
+                    <h4 class="tx-dark tx-size-1">LINKS</h4>
                     <p><a href="about.html">About</a></p>
                     <p><a href="contact.html">Contact</a></p>
                     <p><a href="inventory.html">Inventory</a></p>
                 </div>
 
                 <div class="site-links">
-                    <h4>LEGAL</h4>
+                    <h4 class="tx-dark tx-size-1">LEGAL</h4>
                     <p><a href="#">Privacy Policy</a></p>
                     <p><a href="#">Sitemap</a></p>
                 </div>
 
                 <div class="site-links">
-                    <h4>SOCIAL</h4>
+                    <h4 class="tx-dark tx-size-1">SOCIAL</h4>
                     <div class="footer-social">
                         <a href="https://web.facebook.com/ACE-CAPS-416560792428609/"><i
                                 class="fab fa-facebook-f"></i></a>
